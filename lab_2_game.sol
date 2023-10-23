@@ -41,7 +41,7 @@ contract RockPaperScissors {
 
     function play(string memory _choice) public onlyPlayers gameNotFinished {
         require(choiceMapping[_choice] != Choices.None, "Invalid choice. Use 'rock', 'paper' or 'scissors'.");
-        require(msg.sender == player1 && bytes(choice1).length == 0 || msg.sender == player2 && bytes(choice2).length == 0, "You've already made a choice.");
+        require(msg.sender == player1 && bytes(choice1).length == 0 || msg.sender == player2 && bytes(choice2).length == 0, "You already made a choice.");
         
         if (msg.sender == player1) {
             choice1 = _choice;
